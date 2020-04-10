@@ -20,10 +20,21 @@ def create_il_from_epson(start, end, BASE_DIR):
     return imagelist
 
 
-BASE_DIR = "C:/Users/Jack/Desktop/Courses/M152 Statistical Inference"
+def change_slash(string):
+    result = ""
+    for i in range(0, len(string)):
+        if string[i] == "\\":
+            result += "/"
+        else:
+            result += string[i]
+    return result
+
+
+# BASE_DIR = change_slash("C:\\Users\\Jack\\Desktop\\Courses\\CSJT189 Discrete Differential Geometry\\HW4")
+BASE_DIR = "C:/Users/Jack/Desktop/Courses/CSJT189 Discrete Differential Geometry/HW4"
 os.chdir(BASE_DIR)
 # imagelist is the list with all image filenames
-imagelist = create_il_from_epson(2, 5, BASE_DIR)
+imagelist = create_il_from_epson(7, 9, BASE_DIR)
 
 pdf = FPDF()
 # pdf = FPDF(orientation = 'L') #if you want your pdf to be in Landscape mode
