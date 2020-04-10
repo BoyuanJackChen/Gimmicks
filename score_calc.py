@@ -8,7 +8,7 @@ def display(score, course_name, scale=DEFAULT_SCALE):
 	lower_bound = 0
 	letter_grade="D"
 	for key,val in sorted(scale.items()):
-		if (val<score):
+		if val<score and score-val <= 4:
 			letter_grade = "an "+key if key[0]=='A' else "a "+key
 			lower_bound = val
 			break
@@ -16,12 +16,12 @@ def display(score, course_name, scale=DEFAULT_SCALE):
 
 
 def is_valid_format(list):
-	if (len(list)%2 != 0):
+	if len(list)%2 != 0:
 		return False
 	for i in range(0, int(len(list)/2)):
 		my_score = list[2*i]
 		full_score = list[2*i+1]
-		if (my_score > full_score):
+		if my_score > full_score:
 			return False
 	return True
 
@@ -56,12 +56,23 @@ def calc_mean(score_list, in_score=False):
 		for i in range(0, len(score_list/2)):
 			all_mine += score_list[i]
 			all_full += score_list[2*i+1]
-		return (all_mine/all_full)
+		return all_mine / all_full
 
 
-probability_scores = {'Homework':[49,50, 91,100, 147,150, 98,100, 100,100, 45,50, 99,100], 
-	"Midterm1":[97,100]}
-probability_proportion = np.array([.25, .40])
-probability_scale = DEFAULT_SCALE
-display(score_calc(probability_scores, probability_proportion), 
-	"Probability", probability_scale)
+# probability_scores = {'Homework':[49,50, 91,100, 147,150, 98,100, 100,100, 45,50, 99,100],
+# 	"Midterm1":[97,100]}
+# probability_proportion = np.array([.25, .40])
+# probability_scale = DEFAULT_SCALE
+# display(score_calc(probability_scores, probability_proportion),
+# 	"Probability", probability_scale)
+
+algorithm_scores = {'Homework':[38,38, 42,45, 65,70, 39,40, 16,18, 47,54, 24,25, 16,22, 35.5,42, 30,35],
+	"Midterm1": [51.5,65],
+	# "Midterm2": [65,65],
+	# "Final": [100,100]
+	}
+# Interestingly, participation is "\epsilon"
+algorithm_proportion = np.array([.50, .15])
+algorithm_scale = DEFAULT_SCALE
+display(score_calc(algorithm_scores, algorithm_proportion),
+	"Algorithms", algorithm_scale)
