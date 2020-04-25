@@ -1,0 +1,12 @@
+
+
+Ubuntu: 
+
+$ lsb_release -a
+Show the version
+
+
+Visual Studio Code: 
+
+- Alt+Z
+Automatically concat viewing lines

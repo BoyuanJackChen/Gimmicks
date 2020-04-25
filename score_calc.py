@@ -66,10 +66,11 @@ def calc_mean(score_list, in_score=False):
 # display(score_calc(probability_scores, probability_proportion),
 # 	"Probability", probability_scale)
 
-algorithm_scores = {'Homework':[38,38, 42,45, 65,70, 39,40, 16,18, 47,54, 24,25, 16,22, 35.5,42, 30,35],
+algorithm_scores = {'Homework':[38,38, 42,45, 65,70, 39,40, 16,18, 47,54, 24,25, 16,22, 35.5,42, 30,35,  # 1-10
+								23,30, 52,57],
 	"Midterm1": [51.5,65],
-	# "Midterm2": [65,65],
-	# "Final": [100,100]
+	#"Midterm2": [65,65],
+	#"Final": [100,100]
 	}
 # Interestingly, participation is "\epsilon"
 algorithm_proportion = np.array([.50, .15])
