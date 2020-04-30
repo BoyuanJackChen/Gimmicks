@@ -30,10 +30,10 @@ def change_slash(string):
     return result
 
 
-BASE_DIR = change_slash("C:\\Users\\Jack\\Desktop\\001")
+BASE_DIR = change_slash("C:\\Users\\Jack\\Desktop\\Courses\\CSJT189 Discrete Differential Geometry\\Assignments\\A5_Laplacian")
 os.chdir(BASE_DIR)
 # imagelist is the list with all image filenames
-imagelist = create_il_from_epson(1, 6, BASE_DIR)
+imagelist = create_il_from_epson(3, 4, BASE_DIR)
 
 pdf = FPDF()
 # pdf = FPDF(orientation = 'L') #if you want your pdf to be in Landscape mode
