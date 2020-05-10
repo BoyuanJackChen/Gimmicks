@@ -25,6 +25,7 @@ def is_valid_format(list):
 			return False
 	return True
 
+
 # dict - {"Homework":[97,100]}
 # proportion - must be an np.array, ie. [.75, .25]
 def score_calc(dict, proportion, in_score=False):
@@ -66,19 +67,19 @@ def calc_mean(score_list, in_score=False):
 # display(score_calc(probability_scores, probability_proportion),
 # 	"Probability", probability_scale)
 
-# algorithm_scores = {'Homework':[38,38, 42,45, 65,70, 39,40, 16,18, 47,54, 24,25, 16,22, 35.5,42, 30,35,  # 1-10
-# 								23,30, 52,57],
-# 	"Midterm1": [51.5,65],
-# 	"Midterm2": [41,44],
-# 	"Final": [100,100]
-# 	}
-# # Interestingly, participation is "\epsilon"
-# algorithm_proportion = np.array([.50, .15, .15, .20])
-# algorithm_scale = DEFAULT_SCALE
-# display(score_calc(algorithm_scores, algorithm_proportion),
-# 	"Algorithms", algorithm_scale)
+algorithm_scores = {'Homework':[38,38, 42,45, 65,70, 39,40, 16,18, 47,54, 24,25, 16,22, 35.5,42, 30,35,  # 1-10
+								23,30, 52,57],
+	"Midterm1": [51.5,65],
+	"Midterm2": [41,44],
+	"Final": [53,100]
+	}
+# Interestingly, participation is "\epsilon"
+algorithm_proportion = np.array([.50, .15, .15, .20])
+algorithm_scale = DEFAULT_SCALE
+display(score_calc(algorithm_scores, algorithm_proportion),
+	"Algorithms", algorithm_scale)
 
-LA_scores = {'Homework':[95,100, 96,100, 94,100, 99,100, 100,100, 100,100, 93,100, 100,100, 97,100, 0,100, 0,100,]}
-LA_proportion = np.array([1.0])
-LA_scale = DEFAULT_SCALE
-display(score_calc(LA_scores, LA_proportion), "Advanced Linear Algbera", LA_scale)
+# LA_scores = {'Homework':[95,100, 96,100, 94,100, 99,100, 100,100, 100,100, 93,100, 100,100, 97,100, 0,100, 0,100,]}
+# LA_proportion = np.array([1.0])
+# LA_scale = DEFAULT_SCALE
+# display(score_calc(LA_scores, LA_proportion), "Advanced Linear Algebra", LA_scale)
